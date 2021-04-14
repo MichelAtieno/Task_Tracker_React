@@ -2,12 +2,14 @@ import PropTypes from 'prop-types'
 import Button from './button'
 
 
-const header = ({ title, onAdd }) => {
+const header = ({ title, onAdd, showAdd }) => {
     
     return (
         <header className='header'>
             <h1>{title}</h1>
-            <Button color='green' text='Add' onClick={onAdd} />
+            <Button color={showAdd ? 'red' : 'green'}
+                    text={showAdd ? 'Close' : 'Add'}
+                    onClick={onAdd} />
         </header>
     )
 }
@@ -21,4 +23,4 @@ header.propTypes = {
 
 }
 
-export default header
+export default header;
